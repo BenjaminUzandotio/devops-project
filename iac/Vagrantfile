@@ -1,0 +1,25 @@
+Vagrant.configure("2") do |config|
+  # Box compatible avec Mac M1/M2/M3 (ARM64)
+  config.vm.box = "perk/ubuntu-2204-arm64" 
+  
+  # Configuration Réseau (IP privée pour le serveur)
+  config.vm.network "private_network", ip: "192.168.56.10"
+
+  # Configuration Ansible (Lancement automatique du playbook)
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbooks/playbook.yml"
+    ansible.compatibility_mode = "2.0"
+  end
+
+  # Optimisation des ressources
+  config.vm.provider "vmware_desktop" do |v|
+    v.gui = false
+    v.memory = 2048
+    v.cpus = 2
+  end
+  
+  config.vm.provider "qemu" do |q|
+    q.memory = "2048M"
+    q.cpu = "2"
+  end
+end

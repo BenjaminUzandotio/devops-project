@@ -14,7 +14,7 @@ Python/FastAPI CRUD service with PostgreSQL storage, automated tests, CI, contai
 ## Screenshots
 - CI green: `screenshots/ci_success.png`
 - Swagger UI: `screenshots/app_swagger.png`
-- K8s pods running: `screenshots/k8s_pods_runnning.png`
+- K8s pods running: `screenshots/k8s_pods_running.png`
 
 ## Run Locally (without containers)
 ```bash
@@ -41,8 +41,13 @@ curl http://localhost:8000/health
 ```
 
 ## Tests
+Note: For integration tests, ensure a Postgres database is running (e.g., via Docker Compose).
 ```bash
 cd userapi
+# 1. Start DB for integration tests
+docker compose up -d db
+
+# 2. Run tests
 pytest -v -m "not integration"
 TEST_DATABASE_URL="postgresql+psycopg://user:password@localhost:5432/test_db" pytest -v -m "integration"
 ```
@@ -62,6 +67,12 @@ kubectl apply -f k8s/db.yaml
 kubectl apply -f k8s/app.yaml
 kubectl get pods
 ```
+Environment passed via `DB_HOST/DB_USER/DB_PASS/DB_NAME/DB_PORT` in `k8s/app.yaml`.
+
+## Access the API
+* Docker Desktop (Mac/Windows): The service is exposed on `http://localhost` (Port 80).
+* Minikube: Run `minikube service userapi-service` --url to get the IP.
+
 Environment passed via `DB_HOST/DB_USER/DB_PASS/DB_NAME/DB_PORT` in `k8s/app.yaml`.
 
 ## IaC: Vagrant + Ansible

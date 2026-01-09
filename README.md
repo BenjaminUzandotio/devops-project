@@ -83,11 +83,5 @@ Sync folder `/vagrant/userapi` is used to run the compose stack (API + Postgres)
 - `PUT /users/{id}` – update
 - `DELETE /users/{id}` – delete
 
-## Author
-- Benjo
-
 ## AI Usage
-Project assisted by ChatGPT (documentation and automation guidance).
-
-## Notes
-- Default DB fallback is SQLite for local dev when `DATABASE_URL`/`DB_*` vars are absent; set Postgres/MySQL env vars for production.
+Project assisted by Gemini.

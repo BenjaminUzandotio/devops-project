@@ -85,3 +85,6 @@ Sync folder `/vagrant/userapi` is used to run the compose stack (API + Postgres)
 
 ## AI Usage
 Project assisted by Gemini.
+
+## Author
+- Benjamin Uzan

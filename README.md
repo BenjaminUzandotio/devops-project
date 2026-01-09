@@ -70,8 +70,8 @@ kubectl get pods
 Environment passed via `DB_HOST/DB_USER/DB_PASS/DB_NAME/DB_PORT` in `k8s/app.yaml`.
 
 ## Access the API
-* Docker Desktop (Mac/Windows): The service is exposed on `http://localhost` (Port 80).
-* Minikube: Run `minikube service userapi-service` --url to get the IP.
+- Docker Desktop (Mac/Windows): The service is exposed on `http://localhost` (Port 80).
+- Minikube: Run `minikube service userapi-service` --url to get the IP.
 
 Environment passed via `DB_HOST/DB_USER/DB_PASS/DB_NAME/DB_PORT` in `k8s/app.yaml`.
 

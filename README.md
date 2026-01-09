@@ -56,7 +56,7 @@ TEST_DATABASE_URL="postgresql+psycopg://user:password@localhost:5432/test_db" py
 - Image: `benjo55/userapi:latest`
 - Link: https://hub.docker.com/r/benjo55/userapi
 
-## Kubernetes (Minikube example)
+## Kubernetes
 ```bash
 kubectl apply -f k8s/db.yaml
 kubectl apply -f k8s/app.yaml

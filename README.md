@@ -21,7 +21,7 @@ Python/FastAPI CRUD service with PostgreSQL storage, automated tests, CI, contai
 cd userapi
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-export DATABASE_URL="postgresql+psycopg://user:password@localhost:5432/userdb"  # adjust as needed
+export DATABASE_URL="postgresql+psycopg://user:password@localhost:5432/userdb"  # please adjust as needed
 uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
 curl http://localhost:8000/health
 ```
@@ -61,7 +61,6 @@ TEST_DATABASE_URL="postgresql+psycopg://user:password@localhost:5432/test_db" py
 kubectl apply -f k8s/db.yaml
 kubectl apply -f k8s/app.yaml
 kubectl get pods
-minikube service userapi-service --url
 ```
 Environment passed via `DB_HOST/DB_USER/DB_PASS/DB_NAME/DB_PORT` in `k8s/app.yaml`.
 

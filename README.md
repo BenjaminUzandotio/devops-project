@@ -76,15 +76,17 @@ Sync folder `/vagrant/userapi` is used to run the compose stack (API + Postgres)
 
 ## API Quick Reference
 - `GET /health` – DB-backed health check
-- `GET /metrics` – process metrics (bonus)
+- `GET /metrics` – process metrics
 - `POST /users` – create user
 - `GET /users` – list users (skip/limit)
 - `GET /users/{id}` – read one
 - `PUT /users/{id}` – update
 - `DELETE /users/{id}` – delete
 
-## AI Usage
-Project assisted by Gemini.
-
 ## Author
 - Benjamin Uzan
+
+## AI Usage
+Project assisted by Gemini and Github Copilot in VsCode.
+
+
